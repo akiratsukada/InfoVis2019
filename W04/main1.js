@@ -4,6 +4,7 @@ function main()
     var height = 500;
 
     var scene = new THREE.Scene();
+    
 
     var fov = 45;
     var aspect = width / height;
