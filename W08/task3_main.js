@@ -24,17 +24,20 @@ function main()
     var vertices = [
         [ -1,  1, 0 ], // 0
         [ -1, -1, 0 ], // 1
-        [  1, -1, 0 ]  // 2
+        [  1, -1, 0 ],  // 2
+        [ 1, 1, 0 ] // 3
     ];
 
     var faces = [
         [ 0, 1, 2 ], // f0
+        [ 0, 2, 3 ]// f1
     ];
 
     var scalars = [
         0.1,   // S0
         0.2, // S1
-        0.8  // S2
+        0.8,  // S2
+        0.5 //S3
     ];
 
     // Create color map
@@ -42,17 +45,10 @@ function main()
     for ( var i = 0; i < 256; i++ )
     {
         var S = i / 255.0; // [0,1]
-<<<<<<< HEAD
-        var R = 1 - S;
-        var G = Math.max( Math.cos( ( S - 0.5 ) * Math.PI ), 0.0 );
-        var B = Math.max( Math.cos( S * Math.PI ), 0.0 );
-        var color = new THREE.Color( R, 1, 1 );
-=======
         var R = 1;
         var G = 1 - S;
         var B = 1 - S;
         var color = new THREE.Color( R, G, B );
->>>>>>> 50156f92069cfd25e6116a226e16980ce1a04234
         cmap.push( [ S, '0x' + color.getHexString() ] );
     }
 
@@ -89,15 +85,9 @@ function main()
     for ( var i = 0; i < nfaces; i++ )
     {
         var id = faces[i];
-<<<<<<< HEAD
-        var S0 = Math.round(scalars[ id[0] ] * 255);
-        var S1 = Math.round(scalars[ id[1] ] * 255);
-        var S2 = Math.round(scalars[ id[2] ] * 255);
-=======
         var S0 = Math.round(((scalars[ id[0] ] - 0.1)/0.7)*255);
         var S1 = Math.round(((scalars[ id[1] ] - 0.1)/0.7)*255);
         var S2 = Math.round(((scalars[ id[2] ] - 0.1)/0.7)*255);
->>>>>>> 50156f92069cfd25e6116a226e16980ce1a04234
         var C0 = new THREE.Color().setHex( cmap[ S0 ][1] );
         var C1 = new THREE.Color().setHex( cmap[ S1 ][1] );
         var C2 = new THREE.Color().setHex( cmap[ S2 ][1] );

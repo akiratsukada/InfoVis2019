@@ -1,0 +1,39 @@
+<html>
+    <head>
+	<title>Final Task</title>
+    </head>
+    <body style="margin:0">
+    <div id="display" style="width: 80%; float: left;"></div>
+    <div id="controller" style="width:20%; float:left;">
+    <label id="label" style="font-family:Arial;"></label>
+    
+    
+    
+    
+    <h1>Visualization Techniques</h1>
+    <p>
+        
+        Isosurface Extractionによってロブスターのデータを描画した。<br>
+        ロブスターには、レインボーカラーマップ上でisovalueに対応する色を用いて着色を行った。<br>
+        <br>
+        また、左画面にスライダーを設置した。<br>
+        このスライダーを動かすことによってisovalueを変更することができる。(左端が0で、右端が256となっている)<br>
+        スライダーを動かし、isovalueを変更することによって、ロブスターの形と色を変化させることが可能である。<br>
+    </p>
+    <input type="range" min="0" max="256" step="1" value="128"
+    id="isovalue"/>
+
+    </body> 
+	<script src="three.min.js"></script>
+	<script src="TrackballControls.js"></script>
+	<script src="http://threejs.org/examples/js/math/Lut.js"></script>
+	<script src="http://naohisas.github.io/KVS.js/Build/KVS.min.js"></script>
+	<script src="http://naohisas.github.io/KVS.js/Build/KVS2THREE.min.js"></script>
+	<script src="http://naohisas.github.io/KVS.js/Source/KVSLobsterData.js"></script>
+	<script src="Bounds.js"></script>
+	<script src="Isosurfaces.js"></script>
+	<script src="main.js"></script>
+	<script>
+	 main();
+    </script>
+</html>

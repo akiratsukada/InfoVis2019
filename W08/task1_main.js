@@ -82,9 +82,15 @@ function main()
     for ( var i = 0; i < nfaces; i++ )
     {
         var id = faces[i];
+<<<<<<< HEAD
         var S0 = Math.round(scalars[ id[0] ] * 255);
         var S1 = Math.round(scalars[ id[1] ] * 255);
         var S2 = Math.round(scalars[ id[2] ] * 255);
+=======
+        var S0 = Math.round(((scalars[ id[0] ] - 0.1)/0.7)*255);
+        var S1 = Math.round(((scalars[ id[1] ] - 0.1)/0.7)*255);
+        var S2 = Math.round(((scalars[ id[2] ] - 0.1)/0.7)*255);
+>>>>>>> 50156f92069cfd25e6116a226e16980ce1a04234
         var C0 = new THREE.Color().setHex( cmap[ S0 ][1] );
         var C1 = new THREE.Color().setHex( cmap[ S1 ][1] );
         var C2 = new THREE.Color().setHex( cmap[ S2 ][1] );
